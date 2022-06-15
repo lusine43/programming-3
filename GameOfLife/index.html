@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <script src="script.js"></script>
     <style>
         p {
             font-size: 25px;
@@ -19,17 +22,10 @@
     <!--<audio id="audio">
         <source src= "sound/SpaceShuttle.mp3">
     </audio> -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-    <script src="class.js"></script>
-    <script src="class_star.js"></script>
-    <script src="class_galaxy.js"></script>
-    <script src="class_planet.js"></script>
-    <script src="class_hollow.js"></script>
-    <script src="class_meteorite.js"></script>
-    <script src="script.js"></script>
-        <p><img src="https://i.imgur.com/w4O5U4J.png"> Աստղերը բազմանում են ազատ տարածության մեջ:</p>
-        <p><img src="https://i.imgur.com/6Q2pC4h.png"> Գալակտիկաները կլանում են աստղերին, որից հետո վերանում են` առաջացնելով 2 մոլորակներ:</p>
-        <p><img src="https://i.imgur.com/VOpuoyA.png"> Մոլորակները շարժվում են այնքան ժամանակ մինչև բախվում են երկնաքարին <img src="https://i.imgur.com/o8qbxAj.png"> և դրա հետ միասին` վերանում:</p>
-        <p><img src="https://i.imgur.com/XzhiYhg.png"> Սև խոռոչը կլանում է իր մոտակայքում ցանկացածին և վերանում է, երբ ամբողջովին շրջապատված է լինում աստղերով:</p>
+
+    <p><img src="https://i.imgur.com/w4O5U4J.png"> Աստղերը բազմանում են ազատ տարածության մեջ:</p>
+    <p><img src="https://i.imgur.com/6Q2pC4h.png"> Գալակտիկաները կլանում են աստղերին, որից հետո վերանում են` առաջացնելով 2 մոլորակներ:</p>
+    <p><img src="https://i.imgur.com/VOpuoyA.png"> Մոլորակները շարժվում են այնքան ժամանակ մինչև բախվում են երկնաքարին <img src="https://i.imgur.com/o8qbxAj.png"> և դրա հետ միասին` վերանում:</p>
+    <p><img src="https://i.imgur.com/XzhiYhg.png"> Սև խոռոչը կլանում է իր մոտակայքում ցանկացածին և վերանում է, երբ ամբողջովին շրջապատված է լինում աստղերով:</p>
 </body>
 </html>

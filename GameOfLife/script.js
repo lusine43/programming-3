@@ -1,7 +1,7 @@
 /*let sound = new Audio('sound/SpaceShuttle.mp3');
 sound.play();*/
 
-let matrix = [];
+var socket = io();
 
 let side = 50;
 let starArr = [];
@@ -9,35 +9,6 @@ let galaxyArr = [];
 let planetArr = [];
 let hollowArr = [];
 let meteoriteArr = [];
-
-function matrix_generator(matrixSize, star, galaxy, hollow, meteorite) {
-    for (let y = 0; y < matrixSize; y++) {
-        matrix.push([]);
-        for (let x = 0; x < matrixSize; x++) {
-            matrix[y].push(0);
-        }
-    }
-    for (let i = 0; i < star; i++) {
-        let x1 = Math.round(Math.random() * (matrix.length - 1));
-        let y1 = Math.round(Math.random() * (matrix.length - 1));
-        new Star(x1, y1);
-    }
-    for (let i = 0; i < galaxy; i++) {
-        let x1 = Math.round(Math.random() * (matrix.length - 1));
-        let y1 = Math.round(Math.random() * (matrix.length - 1));
-        new Galaxy(x1, y1);
-    }
-    for (let i = 0; i < hollow; i++) {
-        let x1 = Math.round(Math.random() * (matrix.length - 1));
-        let y1 = Math.round(Math.random() * (matrix.length - 1));
-        new Hollow(x1, y1);
-    }
-    for (let i = 0; i < meteorite; i++) {
-        let x1 = Math.round(Math.random() * (matrix.length - 1));
-        let y1 = Math.round(Math.random() * (matrix.length - 1));
-        new Meteorite(x1, y1);
-    }
-}
 
 let img, img1, img2, img3, img4, img5;
 
@@ -55,7 +26,7 @@ function setup() {
     background("blue");
 }
 
-function draw() {
+function loop() {
     for (let y = 0; y < matrix.length; y++) {
         for (let x = 0; x < matrix[y].length; x++) {
             if (matrix[y][x] == 0) {
@@ -98,4 +69,8 @@ function draw() {
     }
 }
 
-
+setInterval(
+    function () {
+    socket.on('send matrix', loop)
+    },1000
+)
